@@ -1,6 +1,6 @@
 #!ruby
 # -*- mode: ruby; coding: utf-8 -*-
-# Last updated: <2017/03/25 23:32:06 +0900>
+# Last updated: <2017/03/31 10:11:12 +0900>
 #
 # TinyDaeParser
 #
@@ -9,7 +9,6 @@
 # testing environment : Ruby 2.2.6 p396 mingw32
 # License : CC0 / Public Domain
 
-Version = "1.0.0"
 
 require 'rexml/document'
 require 'pp'
@@ -17,6 +16,8 @@ require 'optparse'
 require 'json'
 
 class TinyDaeParser
+
+  VERSION = "1.0.1"
 
   # return [true, false] use vertex data
   attr_accessor :use_vertex
@@ -659,6 +660,7 @@ end
 
 # ----------------------------------------
 if $0 == __FILE__
+  Version = TinyDaeParser::VERSION
   opts = TinyDaeParser.parse_options(ARGV)
   o = TinyDaeParser.new(opts[:infile],
                         use_index: opts[:index],
